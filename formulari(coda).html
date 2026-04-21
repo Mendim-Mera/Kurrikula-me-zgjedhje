@@ -461,7 +461,7 @@ function getTouchPosition(e) {
         offsetY: touch.clientY - rect.top,
     };
 }
-async function kontrolloNxenesinEkziston(NrPersonalNxenesi) {
+async function kontrolloNxenesinEkziston(emriNxenesi, mbiemriNxenesi, NrPersonalNxenesi) {
     try {
         // Merr të gjitha rreshtat nga tabela (me useColumnNames për qartësi)
         let allItems = [];
@@ -490,10 +490,13 @@ async function kontrolloNxenesinEkziston(NrPersonalNxenesi) {
 
         } while (pageToken);
 
-        // Kontrollo vetëm numrin personal (i vetmi identifikues unik i besueshëm)
+        // Kontrollo numrin personal OSE emër + mbiemër
         const nxenesiEkziston = allItems.some(item => {
             const values = item.values;
-            return values['c-W369W-QHne'] === NrPersonalNxenesi;
+            return (
+                values['c-W369W-QHne'] === NrPersonalNxenesi ||
+                (values['c-KT22Io33BY'] === emriNxenesi && values['c-IQKVQ7-_BD'] === mbiemriNxenesi)
+            );
         });
 
         return nxenesiEkziston;
@@ -534,16 +537,12 @@ async function dergoTeDhenat() {
     const mbiemriPrindi = document.getElementById("mbiemri").value;
 
     // Kontrollo nëse nxënësi ekziston (vetëm me numrin personal)
-    const nxenesiEkziston = await kontrolloNxenesinEkziston(NrPersonalNxenesi);
+    const nxenesiEkziston = await kontrolloNxenesinEkziston(emriNxenesi, mbiemriNxenesi, NrPersonalNxenesi);
     if (nxenesiEkziston) {
-        const ripovo = confirm(
-            "Ky numër personal është gjetur tashmë në sistem.\n\n" +
-            "Nëse mendoni se ky është gabim (p.sh. të dhënat u fshinë), " +
-            "klikoni OK për të dërguar sërish formularin.\n\n" +
-            "Klikoni Anulo për të mos dërguar."
-        );
-        if (!ripovo) return; // Nëse përdoruesi zgjedh Anulo, mos vazhdo
-        // Nëse zgjedh OK, vazhdo me dërgimin pa kontroll
+        podergohet = false;
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "DËRGO"; }
+        alert("Ky formular është plotësuar tashmë!\n\nNëse keni nevojë për ndryshime, kontaktoni administratorin e shkollës.");
+        return;
     }
 
     // Mbledh të dhënat nga tabela
