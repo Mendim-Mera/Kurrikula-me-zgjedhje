@@ -3,36 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173f7a">
     <title>Përshëndetje</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 20%;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: darkred;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Faleminderit!<br><br><br> Formulari juaj është regjistruar.</h1><br>
-    <h2>Shkolla do të caktojë për ju klasën që përmbush më mirë preferencat që ju keni vendosur në formular.</h2><br>
-    <button onclick="closeWindow()">Dil</button>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+<div class="shell" style="padding-top:8vh">
+    <main class="card thanks">
+        <div class="check">
+            <svg viewBox="0 0 48 48"><path d="M10 25l9 9 19-20"/></svg>
+        </div>
+        <h1>Faleminderit!</h1>
+        <p><b>Formulari juaj u regjistrua me sukses.</b><br>
+        Shkolla do të caktojë për ju klasën që përmbush më mirë preferencat që keni vendosur në formular.</p>
+        <button class="btn red" onclick="closeWindow()">Dil</button>
+    </main>
+    <div class="foot">Gjimnazi "Said Najdeni" · Peshkopi</div>
+</div>
 
-    <script>
-        function closeWindow() {
-    window.location.href = "about:blank";
+<script>
+    function closeWindow() {
+        window.location.href = "about:blank";
+    }
+
+    // Konfeti i lehtë festiv
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const box = document.getElementById('confetti');
+        const colors = ['#c62f36', '#2a66bd', '#ffbf47', '#22b45a', '#ffffff'];
+        for (let i = 0; i < 40; i++) {
+            const p = document.createElement('i');
+            p.style.left = Math.random() * 100 + '%';
+            p.style.background = colors[i % colors.length];
+            p.style.animationDuration = (2.5 + Math.random() * 2.5) + 's';
+            p.style.animationDelay = (Math.random() * 1.2) + 's';
+            box.appendChild(p);
         }
-    </script>
+        setTimeout(() => box.remove(), 7000);
+    })();
+</script>
 </body>
 </html>

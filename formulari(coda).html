@@ -3,263 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173f7a">
     <title>Formular për lëndët me zgjedhje klasa 12</title>
-    <style>
-        /* Stilizimi i përgjithshëm */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: lightblue;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .form-container {
-            background-color: moccasin;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 100%;
-            max-width: 800px;
-            margin: 20px;
-        }
-
-        .page {
-            padding: 20px;
-            display: none; /* Fillimisht të gjitha faqet janë të fshehura */
-        }
-
-        .page.active {
-            display: block; /* Faqja aktive shfaqet */
-        }
-
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 24px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-            font-size: 14px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-	 .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-
-        .form-group input:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-        .table-container {
-            margin-top: 20px;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: papayawhip;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            font-size: 14px;
-        }
-
-        th {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .error {
-            color: red;
-            font-size: 12px;
-            display: none; /* Fillimisht i fshehur */
-        }
-
-        .error-message {
-            color: red;
-            margin-top: 10px;
-            font-size: 12px;
-            display: none; /* Fillimisht i fshehur */
-        }
-
-        .button-container {
-            margin-top: 20px;
-            text-align: right;
-        }
-
-        .button-container button {
-            padding: 10px 20px;
-            margin-left: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: limegreen;
-            color: #fff;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button-container button:hover {
-            background-color: #0056b3;
-        }
-
-        .button-container button[type="button"] {
-            background-color: dodgerblue;
-        }
-
-        .button-container button[type="button"]:hover {
-            background-color: #5a6268;
-        }
-	.input-wrapper {
-            display: flex;
-            gap: 10px;
-	    margin-bottom: 10px;
-	    
-        }
-        .input-box {
-            padding: 8px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-	    box-sizing: border-box;
-        }
-        .output {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-	/* Parandalon scroll-in kur përdoruesi po firmos */
-	.no-scroll {
-    	overflow: hidden;
-    	position: fixed;
-    	width: 100%;
-    	height: 100%;
-	}
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 20px;
-            }
-
-            .form-group input {
-                font-size: 12px;
-            }
-
-            th, td {
-                padding: 8px;
-                font-size: 12px;
-            }
-
-            .button-container button {
-                padding: 8px 16px;
-                font-size: 12px;
-            }
-	      #firmaCanvas {
-        width: 100%; /* Canvas-i zë 100% të gjerësisë së ekranit */
-        height: auto; /* Lartësia rregullohet automatikisht */
-        max-width: 300px; /* Vendos një maksimum për gjerësinë */
-        max-height: 200px; /* Vendos një maksimum për lartësinë */
-        margin: 0 auto; /* Qendro canvas-in horizontalisht */
-	
-    }
-
-    .form-container {
-        padding: 10px; /* Shto pak hapësirë përreth formularit */
-    }
-
-    .page {
-        padding: 10px; /* Shto pak hapësirë përreth faqeve */
-    }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="shell">
 
-<div class="form-container">
+    <div class="topbar">
+        <div class="logo-wrap sm"><img src="logo.jpg" alt="Logoja e shkollës"></div>
+        <div><b>Gjimnazi "Said Najdeni"</b><span>Lëndët me zgjedhje · Klasa XII</span></div>
+    </div>
+
+<div class="card form-container">
+
+    <div class="stepper" aria-label="Hapat e formularit">
+        <div class="st active"><div class="dot">1</div><div class="lbl">Të dhënat</div></div>
+        <div class="bar"></div>
+        <div class="st"><div class="dot">2</div><div class="lbl">Lëndët</div></div>
+        <div class="bar"></div>
+        <div class="st"><div class="dot">3</div><div class="lbl">Firma</div></div>
+    </div>
+
     <div class="page active" id="page1">
-        <h3 style="text-align:center;">TË DHËNAT E NXËNËSIT </h3>
-        <form id="myForm">
-    
-	    <p style = "color: #555; font-size: 14px; margin-bottom: 6px;">Emri dhe Mbiemri i Nxënësit:</p>
-            <div class="input-wrapper">
-             
-                <input type="text" id="emrin" class="input-box" placeholder="Emri" oninput="updateText()">
-                <input type="text" id="mbiemrin" class="input-box" placeholder="Mbiemri" oninput="updateText()">
-            </div>
-	    <div class="form-group">
-                <label for="NrPersonalNxenesi">Numri Personal i Nxënësit:</label>
-                <input type="text" id="NrPersonalNxenesi" name="nrPersonalNxenesi" placeholder="A12345678B" required>
-            </div>
-            <div class="form-group">
-                <label for="klasa">Klasa:</label>
-		<select name="Klasa" id="klasa">
-    <option value="" disabled selected>Zgjidh klasën nga lista</option>
-    <option value="11-A">11-A</option>
-    <option value="11-B">11-B</option>
-    <option value="11-C">11-C</option>
-    <option value="11-D">11-D</option>
-    <option value="11-E">11-E</option>
-    <option value="11-F">11-F</option>
-    <option value="11-G">11-G</option>
-    <option value="11-H">11-H</option>
-  </select>
+        <h2>Të dhënat e nxënësit</h2>
+        <p class="lead">Plotëso të dhënat e tua dhe ato të prindit ose kujdestarit ligjor.</p>
+        <form id="myForm" autocomplete="off">
 
+            <p class="section-title">Emri dhe Mbiemri i Nxënësit</p>
+            <div class="input-wrapper">
+                <input type="text" id="emrin" class="input-box" placeholder="Emri">
+                <input type="text" id="mbiemrin" class="input-box" placeholder="Mbiemri">
             </div>
-		<p style = "color: #555; font-size: 14px; margin-bottom: 6px;">Emri dhe Mbiemri i Prindit ose Kujdestarit Ligjor:</p>
-            	<div class="input-wrapper">
-             
-                <input type="text" id="emri" class="input-box" placeholder="Emri" oninput="updateText()">
-                <input type="text" id="mbiemri" class="input-box" placeholder="Mbiemri" oninput="updateText()">
+
+            <div class="form-group">
+                <label for="NrPersonalNxenesi">Numri Personal i Nxënësit</label>
+                <input type="text" id="NrPersonalNxenesi" name="nrPersonalNxenesi" placeholder="A12345678B" maxlength="10" required>
+                <div class="hint">10 karaktere, siç shkruhet në kartën e identitetit.</div>
             </div>
+
+            <div class="form-group">
+                <label for="klasa">Klasa</label>
+                <select name="Klasa" id="klasa">
+                    <option value="" disabled selected>Zgjidh klasën nga lista</option>
+                    <option value="11-A">11-A</option>
+                    <option value="11-B">11-B</option>
+                    <option value="11-C">11-C</option>
+                    <option value="11-D">11-D</option>
+                    <option value="11-E">11-E</option>
+                    <option value="11-F">11-F</option>
+                    <option value="11-G">11-G</option>
+                    <option value="11-H">11-H</option>
+                </select>
+            </div>
+
+            <p class="section-title">Emri dhe Mbiemri i Prindit ose Kujdestarit Ligjor</p>
+            <div class="input-wrapper">
+                <input type="text" id="emri" class="input-box" placeholder="Emri">
+                <input type="text" id="mbiemri" class="input-box" placeholder="Mbiemri">
+            </div>
+
             <div class="error-message" id="page1Error">Ju lutemi plotësoni të gjitha fushat përpara se të vazhdoni.</div>
-	    <div class="error-message" id="page11Error">Numri personal duhet te ketë 10 karaktere.</div>
-	    <div class="error-message" id="page12Error">Numri personal nuk ndodhet në listën e nxënësve të regjistruar. Kontaktoni administratorin.</div>
-	                <div class="button-container">
-                <button type="button" onclick="nextPage()">Vazhdo</button>
+            <div class="error-message" id="page11Error">Numri personal duhet te ketë 10 karaktere.</div>
+            <div class="error-message" id="page12Error">Numri personal nuk ndodhet në listën e nxënësve të regjistruar. Kontaktoni administratorin.</div>
+            <div class="button-container">
+                <button type="button" class="btn" onclick="nextPage()">Vazhdo →</button>
             </div>
         </form>
     </div>
 
     <div class="page" id="page2">
-        <h2>Tabela e Lëndëve me zgjedhje</h2>
-	<p style="text-align:center;">Për secilën nga lëndët në tabelë vendosni një preferencë nga 1 në 13 (1 - lënda më e preferuar, 13 - më pak e preferuara)</p> 
+        <h2>Lëndët me zgjedhje</h2>
+        <p class="lead">Për secilën lëndë vendos një numër nga <b>1 në 13</b>: <b>1</b> = lënda më e preferuar, <b>13</b> = më pak e preferuara. Çdo numër përdoret vetëm një herë.</p>
+
+        <div class="tracker">
+            <div class="tracker-top"><span id="progTxt">0 nga 13 të plotësuara</span><span>Numrat e lirë</span></div>
+            <div class="progress"><i id="progBar"></i></div>
+            <div class="chips" id="chips"></div>
+        </div>
+
         <div class="table-container">
-            <table id="tabela" border="1">
+            <table id="tabela">
                 <thead>
                     <tr>
                         <th>LËNDËT ME ZGJEDHJE</th>
@@ -268,143 +95,154 @@
                 </thead>
                 <tbody>
                     <tr>
-                    <td>MATEMATIKË E AVANCUAR</td>
-                    <td>
-                        <input type="number" name="notaMatematike" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>FIZIKË</td>
-                    <td>
-                        <input type="number" name="notaFizike" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-	        <tr>
-                    <td>KIMI</td>
-                    <td>
-                        <input type="number" name="notaKimi" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>BIOLOGJI</td>
-                    <td>
-                        <input type="number" name="notaBiologji" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>TIK</td>
-                    <td>
-                        <input type="number" name="notaTik" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>LETËRSI</td>
-                    <td>
-                        <input type="number" name="notaLetersi" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-	        <tr>
-                    <td>SOCIOLOGJI</td>
-                    <td>
-                        <input type="number" name="notaSociologji" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>PSIKOLOGJI</td>
-                    <td>
-                        <input type="number" name="notaPsikologji" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>HISTORI</td>
-                    <td>
-                        <input type="number" name="notaHistori" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>GJEOGRAFI</td>
-                    <td>
-                        <input type="number" name="notaGjeografi" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>TEKNOLOGJI</td>
-                    <td>
-                        <input type="number" name="notaTeknologji" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>ARTE</td>
-                    <td>
-                        <input type="number" name="notaArte" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-		<tr>
-                    <td>EDUKIM FIZIK</td>
-                    <td>
-                        <input type="number" name="notaEdukim_fizik" min="1" max="13" step="1" required oninput="kontrolloInput(this)">
-                        <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
-                        <div class="error">Gabim: Vlera është përdorur më parë.</div>
-                    </td>
-                </tr>
-                    <!-- Shto më shumë lëndë sipas nevojës -->
+                        <td><span class="ico">🧮</span><span class="nm">MATEMATIKË E AVANCUAR</span></td>
+                        <td>
+                            <input type="number" name="notaMatematike" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për MATEMATIKË E AVANCUAR">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">⚛️</span><span class="nm">FIZIKË</span></td>
+                        <td>
+                            <input type="number" name="notaFizike" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për FIZIKË">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">🧪</span><span class="nm">KIMI</span></td>
+                        <td>
+                            <input type="number" name="notaKimi" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për KIMI">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">🧬</span><span class="nm">BIOLOGJI</span></td>
+                        <td>
+                            <input type="number" name="notaBiologji" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për BIOLOGJI">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">💻</span><span class="nm">TIK</span></td>
+                        <td>
+                            <input type="number" name="notaTik" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për TIK">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">📖</span><span class="nm">LETËRSI</span></td>
+                        <td>
+                            <input type="number" name="notaLetersi" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për LETËRSI">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">👥</span><span class="nm">SOCIOLOGJI</span></td>
+                        <td>
+                            <input type="number" name="notaSociologji" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për SOCIOLOGJI">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">🧠</span><span class="nm">PSIKOLOGJI</span></td>
+                        <td>
+                            <input type="number" name="notaPsikologji" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për PSIKOLOGJI">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">🏛️</span><span class="nm">HISTORI</span></td>
+                        <td>
+                            <input type="number" name="notaHistori" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për HISTORI">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">🌍</span><span class="nm">GJEOGRAFI</span></td>
+                        <td>
+                            <input type="number" name="notaGjeografi" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për GJEOGRAFI">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">⚙️</span><span class="nm">TEKNOLOGJI</span></td>
+                        <td>
+                            <input type="number" name="notaTeknologji" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për TEKNOLOGJI">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">🎨</span><span class="nm">ARTE</span></td>
+                        <td>
+                            <input type="number" name="notaArte" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për ARTE">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="ico">⚽</span><span class="nm">EDUKIM FIZIK</span></td>
+                        <td>
+                            <input type="number" name="notaEdukim_fizik" min="1" max="13" step="1" inputmode="numeric" placeholder="–" required oninput="kontrolloInput(this)" aria-label="Renditja për EDUKIM FIZIK">
+                            <div class="error">Gabim: Vlera duhet të jetë nga 1 në 13.</div>
+                            <div class="error">Gabim: Vlera është përdorur më parë.</div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
-	</div>
-	<div class="error-message" id="page2Error">Ju lutemi plotësoni të gjitha fushat në tabelë përpara se të dërgoni formën.</div>
-	<div class="button-container">
-        <button type="button" onclick="prevPage()">Kthehu</button>
-        <button type="button" onclick="nextPage()">Vazhdo</button>
         </div>
-	</div>
-    <div class="page" id="page3">
-    <h2>Firma e Prindit</h2>
-    <p style="text-align:center;">Ju lutem, firmosni në hapësirën e mëposhtme:</p>
-    <div class="form-group">
-        <canvas id="firmaCanvas" width="300" height="150" style="border: 1px solid #000; background-color: white;"></canvas>
-        <button type="button" onclick="clearCanvas()">Fshije Firmën</button>
-        <input type="hidden" id="firmaPrindit" name="firmaPrindit" required>
-    </div>
-    <div class="error-message" id="page3Error">Ju lutemi firmosni përpara se të vazhdoni.</div>
-    
-   
         <div class="error-message" id="page2Error">Ju lutemi plotësoni të gjitha fushat në tabelë përpara se të dërgoni formën.</div>
         <div class="button-container">
-            <button type="button" onclick="prevPage()">Kthehu</button>
-            <button type="submit" form="myForm">DËRGO</button>
+            <button type="button" class="btn ghost" onclick="prevPage()">← Kthehu</button>
+            <button type="button" class="btn" onclick="nextPage()">Vazhdo →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page3">
+        <h2>Firma e prindit</h2>
+        <p class="lead">Kontrolloni renditjen e zgjedhur dhe më pas firmosni në kutinë më poshtë.</p>
+
+        <div class="recap">
+            <h3>Renditja juaj (nga më e preferuara)</h3>
+            <ol id="recapList"></ol>
+        </div>
+
+        <div class="form-group">
+            <label>Firma e prindit ose kujdestarit</label>
+            <div class="sig-box" id="sigBox">
+                <canvas id="firmaCanvas" width="300" height="150"></canvas>
+                <div class="ph">✍️ Firmosni këtu</div>
+            </div>
+            <div class="sig-tools"><button type="button" class="btn ghost mini" onclick="clearCanvas()">🗑 Fshije firmën</button></div>
+            <input type="hidden" id="firmaPrindit" name="firmaPrindit" required>
+        </div>
+        <div class="error-message" id="page3Error">Ju lutemi firmosni përpara se të vazhdoni.</div>
+
+        <div class="button-container">
+            <button type="button" class="btn ghost" onclick="prevPage()">← Kthehu</button>
+            <button type="submit" form="myForm" class="btn send">DËRGO</button>
         </div>
     </div>
 </div>
-</form>
+
+    <div class="foot">Gjimnazi "Said Najdeni" · Peshkopi</div>
+</div>
 <script>
  let isDrawing = false;
 const canvas = document.getElementById('firmaCanvas');
 const ctx = canvas.getContext('2d');
 const firmaInput = document.getElementById('firmaPrindit');
+ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#111827';
 
 // Fillon vizatimin
 canvas.addEventListener('mousedown', startDrawing);
@@ -416,6 +254,7 @@ canvas.addEventListener('touchmove', draw);
 
 // Ndalon vizatimin
 canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseleave', () => { if (isDrawing) stopDrawing(); });
 canvas.addEventListener('touchend', stopDrawing);
 
 // Parandalon scroll-in gjatë firmosjes
@@ -451,15 +290,17 @@ function stopDrawing() {
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     firmaInput.value = '';
+    document.getElementById('sigBox').classList.remove('signed');
 }
 
 // Merr pozitën e prekjes ose miut
 function getTouchPosition(e) {
     const rect = canvas.getBoundingClientRect();
     const touch = e.touches ? e.touches[0] : e;
+    const sx = canvas.width / rect.width, sy = canvas.height / rect.height;
     return {
-        offsetX: touch.clientX - rect.left,
-        offsetY: touch.clientY - rect.top,
+        offsetX: (touch.clientX - rect.left) * sx,
+        offsetY: (touch.clientY - rect.top) * sy,
     };
 }
 async function kontrolloNxenesinEkziston(emriNxenesi, mbiemriNxenesi, NrPersonalNxenesi) {
@@ -645,6 +486,7 @@ async function dergoTeDhenat() {
 "K80915070I",
 "K96012061D",
 "K90920040N",
+"H30126003G",
 "K90722003N",
 "K96006012P",
 "K95112021W",
@@ -1054,6 +896,54 @@ async function dergoTeDhenat() {
             alert("Ju lutemi kontrolloni të dhënat e futura!");
         }
     });
+
+    /* ===== Përmirësime vizuale (nuk ndikojnë logjikën e mësipërme) ===== */
+    (function () {
+        const pages = Array.from(document.querySelectorAll('.page'));
+        const steps = document.querySelectorAll('.stepper .st');
+        const bars = document.querySelectorAll('.stepper .bar');
+        const inputs = Array.from(document.querySelectorAll('#tabela input[type="number"]'));
+        const chips = document.getElementById('chips');
+        const prog = document.getElementById('progBar');
+        const progTxt = document.getElementById('progTxt');
+        const sigBox = document.getElementById('sigBox');
+
+        for (let i = 1; i <= 13; i++) { const b = document.createElement('b'); b.textContent = i; chips.appendChild(b); }
+
+        function refreshTracker() {
+            const used = new Set(inputs.map(i => i.value).filter(v => v !== ''));
+            Array.from(chips.children).forEach(b => b.classList.toggle('used', used.has(b.textContent)));
+            const n = inputs.filter(i => i.value !== '').length;
+            prog.style.width = (n / 13 * 100) + '%';
+            progTxt.textContent = n + ' nga 13 të plotësuara';
+            inputs.forEach(i => i.closest('tr').classList.toggle('filled', i.value !== ''));
+        }
+        document.getElementById('tabela').addEventListener('input', refreshTracker);
+
+        function buildRecap() {
+            const list = inputs
+                .map(i => ({ r: parseInt(i.value), n: i.closest('tr').querySelector('.nm').textContent }))
+                .filter(x => !isNaN(x.r)).sort((a, b) => a.r - b.r);
+            document.getElementById('recapList').innerHTML = list.map(x => '<li>' + x.n + '</li>').join('');
+        }
+
+        function refreshStepper() {
+            const idx = pages.findIndex(p => p.classList.contains('active'));
+            steps.forEach((st, i) => { st.classList.toggle('active', i === idx); st.classList.toggle('done', i < idx); });
+            bars.forEach((b, i) => b.classList.toggle('done', i < idx));
+            if (idx === 2) buildRecap();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        pages.forEach(p => new MutationObserver(refreshStepper).observe(p, { attributes: true, attributeFilter: ['class'] }));
+
+        ['mousedown', 'touchstart'].forEach(ev => canvas.addEventListener(ev, () => sigBox.classList.add('signed'), { passive: true }));
+
+        // Numri personal: shkronja të mëdha, pa hapësira
+        const np = document.getElementById('NrPersonalNxenesi');
+        np.addEventListener('input', () => { np.value = np.value.toUpperCase().replace(/\s+/g, ''); });
+
+        refreshTracker();
+    })();
 </script>
 
 </body>

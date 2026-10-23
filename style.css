@@ -1,0 +1,218 @@
+/* ===== Gjimnazi "Said Najdeni" – stili i përbashkët ===== */
+:root{
+  --blue-900:#0f2b5c; --blue-700:#173f7a; --blue-500:#2a66bd; --blue-100:#e8f0fc;
+  --red:#c62f36; --red-dark:#a2232a;
+  --green:#16a34a; --green-dark:#12853d;
+  --ink:#18253f; --muted:#64748b; --line:#e2e8f3; --soft:#f5f8fd; --card:#fff;
+  --radius:20px;
+  --shadow:0 20px 50px -12px rgba(8,25,60,.45);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; background:#173f7a}
+body{
+  margin:0; min-height:100vh; color:var(--ink);
+  font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(900px 500px at 90% -10%, rgba(255,255,255,.14), transparent 60%),
+    radial-gradient(700px 500px at -10% 110%, rgba(198,47,54,.35), transparent 60%),
+    linear-gradient(160deg,#0d2858 0%,#173f7a 50%,#2a66bd 100%);
+  line-height:1.6;
+}
+.shell{max-width:760px; margin:0 auto; padding:28px 16px 48px}
+
+/* Logo */
+.logo-wrap{
+  width:112px; height:112px; border-radius:50%; background:#fff; position:relative; overflow:hidden;
+  box-shadow:0 0 0 5px rgba(255,255,255,.25), 0 10px 25px rgba(0,0,0,.25); flex:none;
+}
+.logo-wrap img{position:absolute; width:230px; max-width:none; left:-59px; top:-9px}
+.logo-wrap.sm{width:60px; height:60px}
+.logo-wrap.sm img{width:123px; left:-31px; top:-5px}
+
+/* Kartë */
+.card{
+  background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:32px; animation:rise .6s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes rise{from{opacity:0; transform:translateY(22px)}to{opacity:1; transform:none}}
+
+h1,h2,h3{margin:0; line-height:1.25; color:var(--blue-900)}
+.eyebrow{
+  display:inline-block; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--red); background:#fdeceb; padding:5px 12px; border-radius:999px;
+}
+
+/* Butona */
+.btn{
+  font:inherit; font-weight:600; font-size:15px; border:0; cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:13px 26px; border-radius:14px; color:#fff;
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+  box-shadow:0 8px 18px -6px rgba(23,63,122,.6);
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn:hover{transform:translateY(-2px); filter:brightness(1.07)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible{outline:3px solid #ffbf47; outline-offset:2px}
+.btn.ghost{background:var(--soft); color:var(--blue-700); box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.ghost:hover{background:var(--blue-100)}
+.btn.send{background:linear-gradient(135deg,#22b45a,var(--green-dark)); box-shadow:0 8px 18px -6px rgba(22,163,74,.6)}
+.btn.red{background:linear-gradient(135deg,#e04148,var(--red-dark)); box-shadow:0 8px 18px -6px rgba(198,47,54,.6)}
+.btn.big{padding:16px 34px; font-size:17px}
+.btn:disabled{opacity:.65; cursor:wait; transform:none}
+
+/* ===== Faqja kryesore ===== */
+.hero{text-align:center; color:#fff; padding:8px 0 24px; animation:rise .6s both}
+.hero .logo-wrap{margin:0 auto 18px}
+.hero h1{color:#fff; font-size:clamp(22px,5vw,32px); font-weight:700}
+.hero p{margin:8px 0 0; opacity:.85; font-size:15px}
+
+.intro h2{font-size:clamp(20px,4vw,24px); margin:14px 0 10px}
+.intro p{margin:0 0 12px; color:#41506b; font-size:15.5px}
+.steps{list-style:none; padding:0; margin:22px 0; display:grid; gap:12px}
+.steps li{
+  display:flex; gap:14px; align-items:center; padding:14px 16px; border-radius:16px;
+  background:var(--soft); border:1px solid var(--line);
+}
+.steps .n{
+  width:40px; height:40px; border-radius:12px; flex:none; display:grid; place-items:center;
+  font-weight:700; color:#fff; background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+}
+.steps b{display:block; font-size:15px; color:var(--blue-900)}
+.steps span{font-size:13.5px; color:var(--muted)}
+.note{
+  display:flex; gap:12px; padding:14px 16px; border-radius:14px; font-size:14px;
+  background:#fff8e6; border:1px solid #f6e0a4; color:#6b5210; margin-bottom:24px;
+}
+.note .ic{font-size:20px; line-height:1.3}
+.cta{text-align:center}
+.cta small{display:block; margin-top:12px; color:var(--muted); font-size:13px}
+
+/* ===== Formulari ===== */
+.topbar{display:flex; align-items:center; gap:14px; color:#fff; margin-bottom:18px; animation:rise .5s both}
+.topbar b{display:block; font-size:16px}
+.topbar span{font-size:13px; opacity:.8}
+
+.stepper{display:flex; align-items:center; margin:0 0 28px; padding:0}
+.stepper .st{display:flex; flex-direction:column; align-items:center; gap:6px; flex:none; width:64px; text-align:center}
+.stepper .dot{
+  width:36px; height:36px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:14px;
+  background:var(--soft); color:var(--muted); border:2px solid var(--line); transition:.3s;
+}
+.stepper .lbl{white-space:nowrap; font-size:11.5px; font-weight:500; color:var(--muted)}
+.stepper .bar{flex:1; height:3px; background:var(--line); border-radius:3px; margin:0 -4px 20px; position:relative; overflow:hidden}
+.stepper .bar::after{content:""; position:absolute; inset:0; background:var(--blue-500); transform:scaleX(0); transform-origin:left; transition:transform .4s}
+.stepper .bar.done::after{transform:scaleX(1)}
+.stepper .st.active .dot{background:linear-gradient(135deg,var(--blue-500),var(--blue-700)); color:#fff; border-color:transparent; box-shadow:0 6px 14px -4px rgba(23,63,122,.6)}
+.stepper .st.active .lbl{color:var(--blue-700); font-weight:600}
+.stepper .st.done .dot{background:var(--green); color:#fff; border-color:transparent}
+
+.page{display:none}
+.page.active{display:block; animation:rise .4s both}
+.page h2{font-size:22px; text-align:left}
+.page .lead{margin:6px 0 22px; color:var(--muted); font-size:14.5px}
+
+.form-group{margin-bottom:18px}
+.form-group label, .fl{display:block; font-size:13.5px; font-weight:600; color:#34435f; margin-bottom:6px}
+.input-wrapper{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px}
+.field, .form-group input, .form-group select, .input-box{
+  width:100%; font:inherit; font-size:15px; color:var(--ink); padding:12px 14px;
+  background:var(--soft); border:1.5px solid var(--line); border-radius:12px; transition:.2s;
+}
+.form-group select{appearance:none; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%23173f7a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 16px center; padding-right:42px}
+.form-group input:focus, .form-group select:focus, .input-box:focus{
+  outline:none; background:#fff; border-color:var(--blue-500); box-shadow:0 0 0 4px rgba(42,102,189,.16);
+}
+.section-title{font-size:13.5px; font-weight:600; color:#34435f; margin:4px 0 8px}
+.hint{font-size:12.5px; color:var(--muted); margin-top:5px}
+#NrPersonalNxenesi{letter-spacing:.1em; font-weight:600; text-transform:uppercase}
+
+.error-message{
+  display:none; margin:14px 0 0; padding:11px 14px; border-radius:12px; font-size:13.5px; font-weight:500;
+  color:#9b1c1c; background:#fdeceb; border:1px solid #f6c4c2; animation:shake .35s;
+}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.button-container{display:flex; justify-content:flex-end; gap:12px; margin-top:26px}
+
+/* Tabela e renditjes */
+.tracker{
+  position:sticky; top:0; z-index:5; margin:0 -12px 8px; padding:12px 12px 10px;
+  background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+}
+.tracker-top{display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:var(--blue-700); margin-bottom:8px}
+.progress{height:8px; background:var(--blue-100); border-radius:8px; overflow:hidden}
+.progress i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--blue-500),var(--green)); border-radius:8px; transition:width .3s}
+.chips{display:flex; flex-wrap:wrap; gap:5px; margin-top:10px}
+.chips b{
+  width:26px; height:26px; border-radius:8px; display:grid; place-items:center; font-size:12px; font-weight:600;
+  background:var(--blue-100); color:var(--blue-700); transition:.2s;
+}
+.chips b.used{background:var(--line); color:#a3aec2; text-decoration:line-through; transform:scale(.9)}
+.chips-cap{font-size:11.5px; color:var(--muted); margin-top:6px}
+
+.table-container{margin-top:6px}
+table{width:100%; border-collapse:separate; border-spacing:0 8px}
+thead{display:none}
+td{background:var(--soft); padding:10px 14px; vertical-align:middle; border-top:1.5px solid var(--line); border-bottom:1.5px solid var(--line); transition:.2s}
+td:first-child{border-left:1.5px solid var(--line); border-radius:14px 0 0 14px; font-weight:600; font-size:14px; color:#2a3957}
+td:last-child{border-right:1.5px solid var(--line); border-radius:0 14px 14px 0; width:120px; text-align:right}
+tr:focus-within td, tr.filled td{background:#fff}
+tr.filled td{border-color:#bcd0ee}
+tr:focus-within td{border-color:var(--blue-500)}
+td .ico{display:inline-grid; place-items:center; width:36px; height:36px; margin-right:10px; border-radius:10px; background:#fff; font-size:19px; box-shadow:inset 0 0 0 1px var(--line); vertical-align:middle}
+td input[type=number]{
+  width:76px; text-align:center; font:inherit; font-weight:700; font-size:18px; color:var(--blue-700);
+  padding:8px 6px; border:1.5px solid var(--line); border-radius:10px; background:#fff; -moz-appearance:textfield;
+}
+td input[type=number]::-webkit-outer-spin-button, td input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
+td input[type=number]:focus{outline:none; border-color:var(--blue-500); box-shadow:0 0 0 4px rgba(42,102,189,.16)}
+.error{display:none; color:#c0262d; font-size:11.5px; font-weight:500; margin-top:4px; text-align:right; line-height:1.3}
+
+/* Firma */
+.sig-box{position:relative; border-radius:16px; background:#fff; border:2px dashed #b4c5e2; overflow:hidden; touch-action:none}
+.sig-box canvas{display:block; width:100%; height:auto; cursor:crosshair; touch-action:none; background:transparent!important; border:0!important}
+.sig-box .ph{position:absolute; inset:0; display:grid; place-items:center; pointer-events:none; color:#b4c5e2; font-weight:600; font-size:18px; transition:opacity .2s}
+.sig-box.signed .ph{opacity:0}
+.sig-box::after{content:""; position:absolute; left:8%; right:8%; bottom:28px; border-bottom:1.5px solid #dbe4f3; pointer-events:none}
+.sig-tools{display:flex; justify-content:flex-end; margin-top:10px}
+.btn.mini{padding:8px 16px; font-size:13px; border-radius:10px}
+
+.recap{margin:0 0 22px; padding:16px 18px; border-radius:16px; background:var(--soft); border:1px solid var(--line)}
+.recap h3{font-size:14px; margin-bottom:10px}
+.recap ol{margin:0; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:6px 18px; counter-reset:r}
+.recap li{display:flex; align-items:center; gap:8px; font-size:13px; color:#34435f}
+.recap li::before{counter-increment:r; content:counter(r); flex:none; width:22px; height:22px; border-radius:7px; display:grid; place-items:center; font-size:11.5px; font-weight:700; background:var(--blue-100); color:var(--blue-700)}
+.recap li:nth-child(-n+3)::before{background:var(--blue-500); color:#fff}
+
+.foot{text-align:center; color:rgba(255,255,255,.7); font-size:12.5px; margin-top:22px}
+
+/* ===== Faqja e mirënjohjes ===== */
+.thanks{text-align:center}
+.check{
+  width:96px; height:96px; margin:0 auto 22px; border-radius:50%; display:grid; place-items:center;
+  background:linear-gradient(135deg,#2fc46a,var(--green-dark)); box-shadow:0 14px 30px -8px rgba(22,163,74,.6);
+  animation:pop .6s cubic-bezier(.2,1.4,.4,1) both;
+}
+.check svg{width:48px; height:48px; stroke:#fff; stroke-width:4.5; fill:none; stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:60; stroke-dashoffset:60; animation:draw .5s .45s forwards}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+.thanks h1{font-size:clamp(24px,6vw,32px)}
+.thanks p{color:#41506b; font-size:16px; margin:12px auto 26px; max-width:460px}
+.confetti{position:fixed; inset:0; pointer-events:none; overflow:hidden}
+.confetti i{position:absolute; top:-20px; width:9px; height:14px; border-radius:2px; opacity:.9; animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+
+@media (max-width:600px){
+  .shell{padding:18px 12px 36px}
+  .card{padding:22px 18px; border-radius:18px}
+  .input-wrapper{grid-template-columns:1fr}
+  .stepper .st{width:60px} .stepper .lbl{font-size:10.5px}
+  td{padding:8px 10px} td:first-child{font-size:13px} td .ico{width:32px; height:32px; margin-right:8px; font-size:17px}
+  td:last-child{width:92px} td input[type=number]{width:64px}
+  .recap ol{grid-template-columns:1fr}
+  .button-container .btn{flex:1}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}

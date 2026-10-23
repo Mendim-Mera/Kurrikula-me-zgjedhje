@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173f7a">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Formular për Lëndët me Zgjedhje - Klasa 12" />
@@ -13,98 +14,48 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <title>Formular - Klasa 12</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #333;
-        }
-
-        .container {
-            background: white;
-            max-width: 650px;
-            margin: 40px auto;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .logo {
-            max-width: 120px;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 20px;
-            color: #1e3c72;
-        }
-
-        p {
-            text-align: left;
-            line-height: 1.6;
-            font-size: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 14px 25px;
-            font-size: 16px;
-            color: white;
-            background: linear-gradient(135deg, #007BFF, #0056b3);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, #0056b3, #003f7f);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                margin: 15px;
-                padding: 20px;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="shell">
 
-    <div class="container">
-        <img src="logo.jpg" alt="Logo" class="logo">
+    <header class="hero">
+        <div class="logo-wrap"><img src="logo.jpg" alt="Logoja e Gjimnazit Said Najdeni"></div>
+        <h1>Gjimnazi "Said Najdeni"</h1>
+        <p>Peshkopi</p>
+    </header>
 
-        <h1>
-            Gjimnazi "Said Najdeni"<br>
-            Formular për Lëndët me Zgjedhje – Klasa XII
-        </h1>
+    <main class="card intro">
+        <span class="eyebrow">Klasa XII</span>
+        <h2>Zgjidh lëndët që të frymëzojnë! 🚀</h2>
 
         <p>
-            I dashur nxënës,<br><br>
-            Ky formular plotësohet nga Ju. Në klasën XII, përmes këtij formulari ju do të përzgjidhni
-            lëndët me zgjedhje që dëshironi të mësoni.<br><br>
-
-            Ju duhet t’i rendisni zgjedhjet nga më e preferuara (1) deri tek më pak e preferuara (13).
-            Formulari plotësohet së bashku me prindin ose kujdestarin.<br><br>
-
-            Shkolla do të shqyrtojë preferencat tuaja duke marrë parasysh mundësitë reale për çdo lëndë.
+            I dashur nxënës, ky formular plotësohet nga Ju. Në klasën XII, përmes tij do të përzgjidhni
+            lëndët me zgjedhje që dëshironi të mësoni. Zgjedhjet e tua ndihmojnë shkollën të ndërtojë një orar
+            që të përshtatet sa më mirë me interesat e tua.
         </p>
 
-        <button class="btn" onclick="location.href='formulari(coda).html'">
-            Vazhdo me plotësimin →
-        </button>
-    </div>
+        <ol class="steps">
+            <li><div class="n">1</div><div><b>Të dhënat tuaja</b><span>Emri, numri personal, klasa dhe të dhënat e prindit</span></div></li>
+            <li><div class="n">2</div><div><b>Rendit lëndët</b><span>Nga më e preferuara (1) deri tek më pak e preferuara (13)</span></div></li>
+            <li><div class="n">3</div><div><b>Firma e prindit</b><span>Firma e prindit ose kujdestarit ligjor dhe dërgimi</span></div></li>
+        </ol>
 
+        <div class="note">
+            <div class="ic">👨‍👩‍👧</div>
+            <div>Formulari plotësohet <b>së bashku me prindin ose kujdestarin</b>. Shkolla do të shqyrtojë preferencat tuaja duke marrë parasysh mundësitë reale për çdo lëndë.</div>
+        </div>
+
+        <div class="cta">
+            <button class="btn big" onclick="location.href='formulari(coda).html'">Vazhdo me plotësimin →</button>
+            <small>⏱ Merr rreth 3 minuta</small>
+        </div>
+    </main>
+
+</div>
 </body>
 </html>
