@@ -486,7 +486,6 @@ async function dergoTeDhenat() {
 "K80915070I",
 "K96012061D",
 "K90920040N",
-"H30126003G",
 "K90722003N",
 "K96006012P",
 "K95112021W",
@@ -941,6 +940,19 @@ async function dergoTeDhenat() {
         // Numri personal: shkronja të mëdha, pa hapësira
         const np = document.getElementById('NrPersonalNxenesi');
         np.addEventListener('input', () => { np.value = np.value.toUpperCase().replace(/\s+/g, ''); });
+
+        // Mban shiritin e numrave të lirë të dukshëm kur hapet tastiera (iOS/Android)
+        const tracker = document.querySelector('.tracker');
+        function pinTracker() {
+            const vv = window.visualViewport; if (!vv) return;
+            tracker.style.transform = vv.offsetTop > 0 ? 'translateY(' + vv.offsetTop + 'px)' : '';
+        }
+        if (window.visualViewport) {
+            visualViewport.addEventListener('scroll', pinTracker);
+            visualViewport.addEventListener('resize', pinTracker);
+        }
+        // Kur kalon te lënda tjetër, mos e le fushën nën shirit
+        inputs.forEach(i => i.addEventListener('focus', () => setTimeout(() => i.scrollIntoView({ block: 'center', behavior: 'smooth' }), 250)));
 
         refreshTracker();
     })();

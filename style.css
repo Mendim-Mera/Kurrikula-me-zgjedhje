@@ -206,13 +206,32 @@ td input[type=number]:focus{outline:none; border-color:var(--blue-500); box-shad
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
 
 @media (max-width:600px){
-  .shell{padding:18px 12px 36px}
-  .card{padding:22px 18px; border-radius:18px}
-  .input-wrapper{grid-template-columns:1fr}
+  .shell{padding:14px 10px 30px}
+  .card{padding:18px 14px; border-radius:18px}
+  .topbar{margin-bottom:12px}
+  .input-wrapper{grid-template-columns:1fr; gap:8px}
+  .stepper{margin-bottom:18px}
   .stepper .st{width:60px} .stepper .lbl{font-size:10.5px}
-  td{padding:8px 10px} td:first-child{font-size:13px} td .ico{width:32px; height:32px; margin-right:8px; font-size:17px}
-  td:last-child{width:92px} td input[type=number]{width:64px}
+  .page h2{font-size:20px} .page .lead{font-size:13px; margin:4px 0 12px; line-height:1.45}
+  /* Tracker kompakt */
+  .tracker{margin:0 -8px 4px; padding:8px 8px 7px}
+  .tracker-top{font-size:12px; margin-bottom:5px}
+  .tracker-top span:last-child{display:none}
+  .progress{height:5px}
+  .chips{flex-wrap:nowrap; gap:3px; margin-top:7px}
+  .chips b{flex:1; min-width:0; height:24px; border-radius:6px; font-size:11px}
+  /* Rreshta kompakte */
+  table{border-spacing:0 5px}
+  td{padding:5px 8px}
+  td:first-child{font-size:12.5px; border-radius:11px 0 0 11px; line-height:1.25}
+  td:last-child{width:64px; border-radius:0 11px 11px 0}
+  td .ico{width:26px; height:26px; margin-right:7px; font-size:15px; border-radius:8px}
+  td input[type=number]{width:52px; padding:5px 2px; font-size:16px; border-radius:8px}
+  .error{font-size:10.5px; text-align:right; position:absolute; right:8px; margin-top:2px}
   .recap ol{grid-template-columns:1fr}
+  .button-container{margin-top:18px}
   .button-container .btn{flex:1}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+
+td input[type=number]{scroll-margin-top:90px}
