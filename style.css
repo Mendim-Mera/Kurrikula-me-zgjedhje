@@ -235,3 +235,6 @@ td input[type=number]:focus{outline:none; border-color:var(--blue-500); box-shad
 @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
 
 td input[type=number]{scroll-margin-top:90px}
+
+/* Fushat e plotësuara automatikisht nga numri personal */
+.autofilled{background:#eef6ff !important; color:#173f7a; cursor:not-allowed; opacity:1; -webkit-text-fill-color:#173f7a}
