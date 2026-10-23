@@ -1,6 +1,7 @@
 // Lista e nxënësve të klasave 11 (pa KP): numri personal -> emri, mbiemri, klasa.
 // Gjeneruar nga Lista_e_Aplikimeve.xlsx. Ky është edhe lista e numrave personalë të lejuar në formular.
 window.NXENESIT = {
+  "H30126003G": { emri: "Mendim", mbiemri: "Mera", klasa: "11-H" },
   "L00326007W": { emri: "RAMADAN", mbiemri: "BASHA", klasa: "11-A" },
   "L00807074N": { emri: "Mario", mbiemri: "Buci", klasa: "11-A" },
   "L05102047D": { emri: "Jasmina", mbiemri: "Cibaku", klasa: "11-A" },
